@@ -189,7 +189,7 @@ body {
   margin-bottom: 35px; 
   display: inline-block;
   position: relative;
-  opacity: 0;
+  opacity: 1;
 } 
 
 .pl-img {
