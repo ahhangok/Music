@@ -247,11 +247,29 @@
       </li>
     </ul>
   </div>
-
-  <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-  <script src="js/script.js"></script>
+   <script>
+      const navbar = document.querySelector('.navbar');
+      const playLists = document.querySelector('.playlists');
+      const playListsHeight = playLists.getBoundingClientRect().height;
+      const arrowUp = document.querySelector('.to-top-btn');
+      
+      document.addEventListener('scroll',() => {
+        if(window.scrollY > playListsHeight / 2) {
+          arrowUp.style.display = 'block';
+        }else{
+          arrowUp.style.display = 'none';
+        }
+      })
+      
+      arrowUp.addEventListener('click',()=>{
+        scrollIntoView('.navbar');
+      })
+      
+      function scrollIntoView(selector) {
+        const scrollTo = document.querySelector(selector);
+        scrollTo.scrollIntoView({ behavior: "smooth" });
+      }
+      
+        </script>
 </body>
 </html>
